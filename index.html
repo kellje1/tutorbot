@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>TutorBot</title>
+        <link rel="stylesheet" href="tutor.css">
+    </head>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="search.html">Search</a>
+        <a href="login.html">Login</a>
+    </nav>
+
+    <body>
+
+        <h1>Welcome to TutorBot!</h1>
+
+        <div class="about-container">
+            <img src="tutor1.png" alt="TutorBot logo">
+        </div>
+            
+        <p>TutorBot is an online platform that helps users get tutoring services online. As most tutoring centers are not available 24/7, TutorBot provides a valuable resource for students seeking academic support.</p>
+
+        <div class="select-button">
+            <button><a href="search.html">Get Started</a></button>
+        </div>
+
+        <h2>Ask TutorBot Anything!</h2>
+
+        <input id="question" placeholder="Ask something..."/>
+        <button onclick="ask()">Ask</button>
+
+        <p id="magic"></p>
+
+        <script>
+            async function ask() {
+                try {
+                    const question = document.getElementById("question").value;
+
+                    const res = await fetch("/generate", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ question })  
+                    });
+
+                    const data = await res.text();
+                    document.getElementById("magic").innerText = data;
+            
+            } catch (error) {
+                    console.error("Error:", error);
+                    document.getElementById("magic").innerText = "An error occurred. Please try again.";
+                }
+            }
+        </script>
+
+    </body>
+
+        <footer>
+        <p>&copy; 2026 TutorBot. All rights reserved.</p>
+    </footer>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>TutorBot</title>
+        <link rel="stylesheet" href="tutor.css">
+    </head>
+
+    <body>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="search.html">Search</a>
+            <a href="login.html">Login</a>
+        </nav>
+
+        <h1>Login to TutorBot</h1>
+        
+        <form id="loginForm">
+            <div class="username-container">
+                <label for="username">Username: </label>
+                <input type="text" id="username" name="username">
+            </div>
+
+            <div class="password-container">
+                <label for="password">Password: </label>
+                <input type="password" id="password" name="password">
+            </div>
+
+            <div class="remember-container">
+                <button type="submit">Login</button>
+            </div>
+
+            <div class="option-container">
+                <label>If you don't have an account, <a href="signup.html">Sign Up</a></label>
+            </div>
+        </form>
+
+        <script src="login.js"></script>
+        <script>
+            if(localStorage.getItem("loggedIn") === "true") {
+                window.location.href = "/index.html";
+            }
+        </script>
+    </body>
+
+    <footer>
+        <p>&copy; 2026 TutorBot. All rights reserved.</p>
+    </footer>
+</html>
