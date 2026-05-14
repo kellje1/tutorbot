@@ -1,0 +1,21 @@
+{
+  "name": "fullstack",
+  "version": "1.0.0",
+  "description": "TutorBot is an online platform that helps users get tutoring services online. As most tutoring centers are not always avaiable 24/7, TutorBot provides a valuable resource for students seeking academic support.",
+  "main": "tutor.js",
+  "scripts": {
+    "start": "node tutor.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kellje1/tutorbot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kellje1/tutorbot/issues"
+  },
+  "homepage": "https://github.com/kellje1/tutorbot#readme"
+}
